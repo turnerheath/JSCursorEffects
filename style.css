@@ -15,12 +15,24 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    flex-direction: row-reverse;
+    flex-direction: row;
     margin: 5px;
 }
-.value-container{
-    margin-left: 5px;
+.brush-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 .slider{
     color: green;
+    margin: 5px;
+}
+
+.checkboxes{
+    width: auto;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
 }

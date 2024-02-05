@@ -30,8 +30,8 @@ class Root {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fillStyle = 'hsl(' + brushcolor.innerHTML + ',100%,' + this.lightness + '%)';
-            ctx.fill();
-            //ctx.stroke();
+            if (document.getElementById('fill').checked)ctx.fill();
+            if (document.getElementById('stroke').checked)ctx.stroke();
             requestAnimationFrame(this.update.bind(this));
         }
     }
