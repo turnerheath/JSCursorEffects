@@ -29,6 +29,7 @@ class Root {
         if (this.size > this.maxSize) {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            //ctx.fillRect(this.x, this.y, this.size, this.size);
             ctx.fillStyle = 'hsl(' + brushcolor.innerHTML + ',100%,' + this.lightness + '%)';
             if (document.getElementById('fill').checked)ctx.fill();
             if (document.getElementById('stroke').checked)ctx.stroke();
@@ -68,7 +69,12 @@ window.addEventListener('mousemove', function(e){
 window.addEventListener('scroll', function(e){
     brushcolor.innerHTML++;
 })
+// window.addEventListener('resize', function() {
+//     canvas.width = window.innerWidth;
+//     canvas.height = window.innerHeight;
+// })
 var brushcolor = document.getElementById("brush-color");
 var slider = document.getElementById("brush-color-slider").oninput = function(){
     brushcolor.innerHTML = this.value
 }
+
