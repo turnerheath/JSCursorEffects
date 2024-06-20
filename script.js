@@ -36,8 +36,33 @@ class Root {
         }
     }
 }
+class Block {
+    constructor(x,y) {
+        this.x = x;
+        this.y = y;
+        this.speedX = Math.random() * 2 - 1;
+        this.speedY = Math.random() * 2 - 1;
+        this.maxSize = Math.random() * 1;
+        this.size = Math.random() * 3 + 10;
+        this.vs = Math.random() * 0.2 + 0.05;
+        this.lightness = 10;
+        this.brushcolor = brushcolor;
+    }
+    update() {
+       this.x += this.speedX + (Math.random()*5 - 2.5);
+       this.y += this.speedY + (Math.random()*5 - 2.5);
+        this.size -= this.vs;
+        if (this.lightness < 70) this.lightness += 0.5;
+        if (this.size > this.maxSize) {
+            ctx.fillStyle = 'hsl(' + brushcolor.innerHTML + ',100%,' + this.lightness + '%)';
+            if (document.getElementById('fill').checked) ctx.fillRect(this.x, this.y, this.size, this.size);
+            if (document.getElementById('stroke').checked)ctx.strokeRect(this.x, this.y, this.size, this.size);
+            requestAnimationFrame(this.update.bind(this));
+        }
+    }
+}
 window.addEventListener('mousemove', function(e){
-    const root = new Root(e.x, e.y);
+    const root = new Block(e.x, e.y);
     root.update();
 })
 window.addEventListener('scroll', function(e){
