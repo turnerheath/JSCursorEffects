@@ -8,17 +8,25 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="slider-container">
-        <div class="brush-container">
-            <span id="brush-color">140</span>
-            <input type="range" min="0" max="360" value="140" class="slider" id="brush-color-slider">
-        </div>
-        <div class="checkboxes">
-            <input type="checkbox" id="stroke" name="stroke"/>
-            <input type="checkbox" id="fill" name="fill" checked/>
+    <div class="container">
+        <canvas id="canvas1"></canvas>
+        <div class = "content-box">
+            <div class="edit-container">
+                <div class="brush-container">
+                    <span id="brush-color">140</span>
+                    <input type="range" min="0" max="360" value="140" class="slider" id="brush-color-slider">
+                </div>
+                <div class="checkboxes">
+                    <input type="checkbox" id="stroke" name="stroke"/>
+                    <input type="checkbox" id="fill" name="fill" checked/>
+                </div>
+            </div>
+            <div class = "page-content">
+                <textarea>THIS IS WHERE THE TEXT GOES</textarea>
+            </div>
         </div>
     </div>
-    <canvas id="canvas1"></canvas>
+    
     <script src="script.js"></script>
 </body>
 </html>

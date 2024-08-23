@@ -63,7 +63,7 @@ class Block {
     }
 }
 window.addEventListener('mousemove', function(e){
-    const root = new Block(e.x, e.y);
+    const root = new Root(e.x, e.y);
     root.update();
 })
 window.addEventListener('scroll', function(e){
